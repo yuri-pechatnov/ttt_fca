@@ -175,171 +175,467 @@ display(df.groupby(['method'], as_index=False).mean())
 ```
 
 
-    {'1_FCA': {'FN': 0,
-      'FP': 0,
-      'TN': 32,
-      'TP': 61,
-      'accuracy': 1.0,
-      'precision': 1.0,
-      'recall': 1.0},
-     '1_GRADIENT-BOOSTING': {'FN': 6,
-      'FP': 0,
-      'TN': 32,
-      'TP': 55,
-      'accuracy': 0.93548387096774188,
-      'precision': 1.0,
-      'recall': 0.90163934426229508},
-     '1_RANDOMFOREST': {'FN': 5,
-      'FP': 1,
-      'TN': 31,
-      'TP': 56,
-      'accuracy': 0.93548387096774188,
-      'precision': 0.98245614035087714,
-      'recall': 0.91803278688524592}}
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FN</th>
+      <th>FP</th>
+      <th>TN</th>
+      <th>TP</th>
+      <th>accuracy</th>
+      <th>data_set</th>
+      <th>method</th>
+      <th>precision</th>
+      <th>recall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>32</td>
+      <td>61</td>
+      <td>1.000000</td>
+      <td>1</td>
+      <td>FCA</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>1</td>
+      <td>31</td>
+      <td>56</td>
+      <td>0.935484</td>
+      <td>1</td>
+      <td>RANDOMFOREST</td>
+      <td>0.982456</td>
+      <td>0.918033</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6</td>
+      <td>0</td>
+      <td>32</td>
+      <td>55</td>
+      <td>0.935484</td>
+      <td>1</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>1.000000</td>
+      <td>0.901639</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>5</td>
+      <td>31</td>
+      <td>51</td>
+      <td>0.942529</td>
+      <td>2</td>
+      <td>FCA</td>
+      <td>0.910714</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>5</td>
+      <td>31</td>
+      <td>51</td>
+      <td>0.942529</td>
+      <td>2</td>
+      <td>RANDOMFOREST</td>
+      <td>0.910714</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>4</td>
+      <td>32</td>
+      <td>49</td>
+      <td>0.931034</td>
+      <td>2</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.924528</td>
+      <td>0.960784</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>2</td>
+      <td>33</td>
+      <td>65</td>
+      <td>0.980000</td>
+      <td>3</td>
+      <td>FCA</td>
+      <td>0.970149</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>2</td>
+      <td>33</td>
+      <td>65</td>
+      <td>0.980000</td>
+      <td>3</td>
+      <td>RANDOMFOREST</td>
+      <td>0.970149</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>1</td>
+      <td>34</td>
+      <td>64</td>
+      <td>0.980000</td>
+      <td>3</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.984615</td>
+      <td>0.984615</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>3</td>
+      <td>27</td>
+      <td>59</td>
+      <td>0.966292</td>
+      <td>4</td>
+      <td>FCA</td>
+      <td>0.951613</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0</td>
+      <td>3</td>
+      <td>27</td>
+      <td>59</td>
+      <td>0.966292</td>
+      <td>4</td>
+      <td>RANDOMFOREST</td>
+      <td>0.951613</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3</td>
+      <td>3</td>
+      <td>27</td>
+      <td>56</td>
+      <td>0.932584</td>
+      <td>4</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.949153</td>
+      <td>0.949153</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>2</td>
+      <td>25</td>
+      <td>58</td>
+      <td>0.932584</td>
+      <td>5</td>
+      <td>FCA</td>
+      <td>0.966667</td>
+      <td>0.935484</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>5</td>
+      <td>3</td>
+      <td>24</td>
+      <td>57</td>
+      <td>0.910112</td>
+      <td>5</td>
+      <td>RANDOMFOREST</td>
+      <td>0.950000</td>
+      <td>0.919355</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>8</td>
+      <td>1</td>
+      <td>26</td>
+      <td>54</td>
+      <td>0.898876</td>
+      <td>5</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.981818</td>
+      <td>0.870968</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0</td>
+      <td>1</td>
+      <td>28</td>
+      <td>56</td>
+      <td>0.988235</td>
+      <td>6</td>
+      <td>FCA</td>
+      <td>0.982456</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0</td>
+      <td>2</td>
+      <td>27</td>
+      <td>56</td>
+      <td>0.976471</td>
+      <td>6</td>
+      <td>RANDOMFOREST</td>
+      <td>0.965517</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0</td>
+      <td>0</td>
+      <td>29</td>
+      <td>56</td>
+      <td>1.000000</td>
+      <td>6</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0</td>
+      <td>4</td>
+      <td>40</td>
+      <td>70</td>
+      <td>0.964912</td>
+      <td>7</td>
+      <td>FCA</td>
+      <td>0.945946</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0</td>
+      <td>5</td>
+      <td>39</td>
+      <td>70</td>
+      <td>0.956140</td>
+      <td>7</td>
+      <td>RANDOMFOREST</td>
+      <td>0.933333</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>2</td>
+      <td>42</td>
+      <td>69</td>
+      <td>0.973684</td>
+      <td>7</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.971831</td>
+      <td>0.985714</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>2</td>
+      <td>32</td>
+      <td>72</td>
+      <td>0.971963</td>
+      <td>8</td>
+      <td>FCA</td>
+      <td>0.972973</td>
+      <td>0.986301</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>1</td>
+      <td>33</td>
+      <td>72</td>
+      <td>0.981308</td>
+      <td>8</td>
+      <td>RANDOMFOREST</td>
+      <td>0.986301</td>
+      <td>0.986301</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2</td>
+      <td>3</td>
+      <td>31</td>
+      <td>71</td>
+      <td>0.953271</td>
+      <td>8</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.959459</td>
+      <td>0.972603</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0</td>
+      <td>1</td>
+      <td>32</td>
+      <td>70</td>
+      <td>0.990291</td>
+      <td>9</td>
+      <td>FCA</td>
+      <td>0.985915</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0</td>
+      <td>1</td>
+      <td>32</td>
+      <td>70</td>
+      <td>0.990291</td>
+      <td>9</td>
+      <td>RANDOMFOREST</td>
+      <td>0.985915</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2</td>
+      <td>4</td>
+      <td>29</td>
+      <td>68</td>
+      <td>0.941748</td>
+      <td>9</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>0.944444</td>
+      <td>0.971429</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>0</td>
+      <td>32</td>
+      <td>58</td>
+      <td>0.989011</td>
+      <td>10</td>
+      <td>FCA</td>
+      <td>1.000000</td>
+      <td>0.983051</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0</td>
+      <td>1</td>
+      <td>31</td>
+      <td>59</td>
+      <td>0.989011</td>
+      <td>10</td>
+      <td>RANDOMFOREST</td>
+      <td>0.983333</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0</td>
+      <td>0</td>
+      <td>32</td>
+      <td>59</td>
+      <td>1.000000</td>
+      <td>10</td>
+      <td>GRADIENT-BOOSTING</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
-    {'2_FCA': {'FN': 0,
-      'FP': 5,
-      'TN': 31,
-      'TP': 51,
-      'accuracy': 0.94252873563218387,
-      'precision': 0.9107142857142857,
-      'recall': 1.0},
-     '2_GRADIENT-BOOSTING': {'FN': 2,
-      'FP': 4,
-      'TN': 32,
-      'TP': 49,
-      'accuracy': 0.93103448275862066,
-      'precision': 0.92452830188679247,
-      'recall': 0.96078431372549022},
-     '2_RANDOMFOREST': {'FN': 0,
-      'FP': 5,
-      'TN': 31,
-      'TP': 51,
-      'accuracy': 0.94252873563218387,
-      'precision': 0.9107142857142857,
-      'recall': 1.0}}
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-
-    {'3_FCA': {'FN': 0,
-      'FP': 2,
-      'TN': 33,
-      'TP': 65,
-      'accuracy': 0.97999999999999998,
-      'precision': 0.97014925373134331,
-      'recall': 1.0},
-     '3_GRADIENT-BOOSTING': {'FN': 1,
-      'FP': 1,
-      'TN': 34,
-      'TP': 64,
-      'accuracy': 0.97999999999999998,
-      'precision': 0.98461538461538467,
-      'recall': 0.98461538461538467},
-     '3_RANDOMFOREST': {'FN': 0,
-      'FP': 2,
-      'TN': 33,
-      'TP': 65,
-      'accuracy': 0.97999999999999998,
-      'precision': 0.97014925373134331,
-      'recall': 1.0}}
-
-
-
-    {'4_FCA': {'FN': 0,
-      'FP': 3,
-      'TN': 27,
-      'TP': 59,
-      'accuracy': 0.9662921348314607,
-      'precision': 0.95161290322580649,
-      'recall': 1.0},
-     '4_GRADIENT-BOOSTING': {'FN': 3,
-      'FP': 3,
-      'TN': 27,
-      'TP': 56,
-      'accuracy': 0.93258426966292129,
-      'precision': 0.94915254237288138,
-      'recall': 0.94915254237288138},
-     '4_RANDOMFOREST': {'FN': 0,
-      'FP': 3,
-      'TN': 27,
-      'TP': 59,
-      'accuracy': 0.9662921348314607,
-      'precision': 0.95161290322580649,
-      'recall': 1.0}}
-
-
-
-    {'5_FCA': {'FN': 4,
-      'FP': 2,
-      'TN': 25,
-      'TP': 58,
-      'accuracy': 0.93258426966292129,
-      'precision': 0.96666666666666667,
-      'recall': 0.93548387096774188},
-     '5_GRADIENT-BOOSTING': {'FN': 8,
-      'FP': 1,
-      'TN': 26,
-      'TP': 54,
-      'accuracy': 0.898876404494382,
-      'precision': 0.98181818181818181,
-      'recall': 0.87096774193548387},
-     '5_RANDOMFOREST': {'FN': 5,
-      'FP': 3,
-      'TN': 24,
-      'TP': 57,
-      'accuracy': 0.9101123595505618,
-      'precision': 0.94999999999999996,
-      'recall': 0.91935483870967738}}
-
-
-
-    {'6_FCA': {'FN': 0,
-      'FP': 1,
-      'TN': 28,
-      'TP': 56,
-      'accuracy': 0.9882352941176471,
-      'precision': 0.98245614035087714,
-      'recall': 1.0},
-     '6_GRADIENT-BOOSTING': {'FN': 0,
-      'FP': 0,
-      'TN': 29,
-      'TP': 56,
-      'accuracy': 1.0,
-      'precision': 1.0,
-      'recall': 1.0},
-     '6_RANDOMFOREST': {'FN': 0,
-      'FP': 2,
-      'TN': 27,
-      'TP': 56,
-      'accuracy': 0.97647058823529409,
-      'precision': 0.96551724137931039,
-      'recall': 1.0}}
-
-
-
-    {'7_FCA': {'FN': 0,
-      'FP': 4,
-      'TN': 40,
-      'TP': 70,
-      'accuracy': 0.96491228070175439,
-      'precision': 0.94594594594594594,
-      'recall': 1.0},
-     '7_GRADIENT-BOOSTING': {'FN': 1,
-      'FP': 2,
-      'TN': 42,
-      'TP': 69,
-      'accuracy': 0.97368421052631582,
-      'precision': 0.971830985915493,
-      'recall': 0.98571428571428577},
-     '7_RANDOMFOREST': {'FN': 0,
-      'FP': 5,
-      'TN': 39,
-      'TP': 70,
-      'accuracy': 0.95614035087719296,
-      'precision': 0.93333333333333335,
-      'recall': 1.0}}
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>method</th>
+      <th>FN</th>
+      <th>FP</th>
+      <th>TN</th>
+      <th>TP</th>
+      <th>accuracy</th>
+      <th>precision</th>
+      <th>recall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>FCA</td>
+      <td>0.6</td>
+      <td>2.0</td>
+      <td>31.2</td>
+      <td>62.0</td>
+      <td>0.972582</td>
+      <td>0.968643</td>
+      <td>0.990484</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GRADIENT-BOOSTING</td>
+      <td>2.5</td>
+      <td>1.8</td>
+      <td>31.4</td>
+      <td>60.1</td>
+      <td>0.954668</td>
+      <td>0.971585</td>
+      <td>0.959690</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>RANDOMFOREST</td>
+      <td>1.1</td>
+      <td>2.4</td>
+      <td>30.8</td>
+      <td>61.5</td>
+      <td>0.962764</td>
+      <td>0.961933</td>
+      <td>0.982369</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 Видим, что на задаче адаптированной под FCA, этот метод выдает лучшие результаты.
@@ -442,7 +738,7 @@ for min_support in [0.001, 0.003, 0.005]:
 ```
 
     [NbConvertApp] Converting notebook lattices.ipynb to markdown
-    [NbConvertApp] Writing 18808 bytes to lattices.md
+    [NbConvertApp] Writing 14931 bytes to lattices.md
 
 
 
